@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__public_listemusiquesindex_id" messageCode="global_generic" url="/public/listemusiques/index" z="5Tb0vrZ0OvX9T5t5J1SDZX9jgTI="/>
+            <menu:item id="i_controller__public_versionsmusiquesindex_id" messageCode="global_generic" url="/public/versionsmusiques/index" z="GT5GpiLNMjvE1QKWnLK8OYErA2g="/>
+            <menu:item id="i_controller__public_creationmusiqueindex_id" messageCode="global_generic" url="/public/creationmusique/index" z="HmXjXAJlGfA9W5Clkse58n3w5Mg="/>
+        </menu:category>
+        <menu:category id="c_musique" z="iipLUqhBJ9YzCZ1IGwCW2ZOrB88=">
+            <menu:item id="i_musique_new" messageCode="global_menu_new" url="/musiques?form" z="2lsz646jnPtxXRn2Afha1XCG8pI="/>
+            <menu:item id="i_musique_list" messageCode="global_menu_list" url="/musiques?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HQ+7eE2QZdrDRYLMgRh0oBRGJWQ="/>
+        </menu:category>
+        <menu:category id="c_fichieraudio" z="jD2m9NL6x0Lb1Q/VnS8hJdIAhvg=">
+            <menu:item id="i_fichieraudio_new" messageCode="global_menu_new" url="/fichieraudios?form" z="aNnz6MjROOWlJiBcL16uj94TL3M="/>
+            <menu:item id="i_fichieraudio_list" messageCode="global_menu_list" url="/fichieraudios?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Anli4rxbc3Vz0Ifw42s4l7eRiQY="/>
+        </menu:category>
+        <menu:category id="c_membredulabel" z="Tuubp58XST/g1hlJ+OjDdkK8deE=">
+            <menu:item id="i_membredulabel_new" messageCode="global_menu_new" url="/membredulabels?form" z="3itYA/70w5bJ+lP63Ghv/ne3JZk="/>
+            <menu:item id="i_membredulabel_list" messageCode="global_menu_list" url="/membredulabels?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Hdrp3mzficTFvel2zRWvLQmzT/k="/>
+        </menu:category>
+        <menu:category id="c_contribution" z="kx+6KtbPQg9/oZW8DKnO22JHLBU=">
+            <menu:item id="i_contribution_new" messageCode="global_menu_new" url="/contributions?form" z="G1FzKwMU63n/hLoz9snZPtkQY1U="/>
+            <menu:item id="i_contribution_list" messageCode="global_menu_list" url="/contributions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="KY6tITYaXJEXfQ/0pk0nBR9hMm0="/>
+        </menu:category>
+        <menu:category id="c_invite" z="NO6Y6xcVdHr92nTxax0E7cLWCkE=">
+            <menu:item id="i_invite_new" messageCode="global_menu_new" url="/invites?form" z="khLJgHE4RFcZ0zH42iErttmdyrc="/>
+            <menu:item id="i_invite_list" messageCode="global_menu_list" url="/invites?page=1&amp;size=${empty param.size ? 10 : param.size}" z="r5GjJPkV2RA9N9CoUDQ2el+wzRU="/>
+        </menu:category>
+        <menu:category id="c_musiqueversion" z="Q4fZdmiBuYeReiqPzxmh7B1NhM0=">
+            <menu:item id="i_musiqueversion_new" messageCode="global_menu_new" url="/musiqueversions?form" z="QLNLJVZ/uzjvrXqcWOERuT2BkM4="/>
+            <menu:item id="i_musiqueversion_list" messageCode="global_menu_list" url="/musiqueversions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dGvSCk6Vb98NrnSGnWJ2cj6cd40="/>
+        </menu:category>
+    </menu:menu>
+</div>

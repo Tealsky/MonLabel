@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:form="http://www.springframework.org/tags/form" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <jsp:output omit-xml-declaration="yes"/>
+  <spring:message code="label_public_creationmusique_index" htmlEscape="false" var="title"/>
+  <util:panel id="title" title="${title}">
+    <spring:message code="application_name" htmlEscape="false" var="app_name"/>
+    <h3>
+      <spring:message arguments="${app_name}" code="welcome_titlepane"/>
+    </h3>
+ 
+    <form:form action="${path}" method="POST" modelAttribute="musique" enctype="multipart/form-data">
+        <field:input field="titre" id="c_com_ben_monlabel_domain_Musique_titre" required="true" z="kGMEeRE20C1HsjT08mlPwX7WZ1E="/>
+        <field:input field="titreProvisoire" id="c_com_ben_monlabel_domain_Musique_titreProvisoire" z="nRm8ZRvQPJLQWWV9sHE+wSTUB1E="/>
+        <field:datetime dateTimePattern="${musiqueVersion_dateedition_date_format}" field="versionActuelle.dateEdition" id="c_com_ben_monlabel_domain_MusiqueVersion_dateEdition" required="true" z="OKCDc/IjABPwis3c96UO915r9ck="/>
+        <field:select field="finie" id="c_com_ben_monlabel_domain_Musique_finie" items="${finitudes}" path="finitudes" z="OOaNmMETQ7i2W4kOhSpkMr2ZoyY="/>
+        <field:select field="etat" id="c_com_ben_monlabel_domain_Musique_etat" items="${etats}" path="etats" z="gD8YmuFDpFrYFMoIbK85a4hVzi8="/>
+        <field:textarea field="versionActuelle.description" id="c_com_ben_monlabel_domain_MusiqueVersion_description" z="Wj+BVzR6vvyv2p3IU2ch5TUqyow="/>
+        <field:textarea field="objectifProchaineVersion" id="c_com_ben_monlabel_domain_Musique_objectifProchaineVersion" z="hPZHdkG+SwMYup1s0Usw79a95GQ="/>
+        <field:select field="versionActuelle.diffusion" id="c_com_ben_monlabel_domain_MusiqueVersion_diffusion" items="${diffusions}" path="diffusions" z="3a8sGTJkZDLoGDaDlTYDJRwviNk="/>
+        
+        Fichier MP3 :
+    	<input type="file" name="file"/><br/>
+    	
+    	<input type="submit" value="Déposer cette nouvelle musique"/>
+    </form:form>
+  </util:panel>
+</div>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" 
+	xmlns:form="http://www.springframework.org/tags/form" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"  
+	version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <jsp:output omit-xml-declaration="yes"/>
+  
+  <c:if test="${empty render or render}">
+   
+    <c:set var="enctype" value="application/x-www-form-urlencoded"/>
+    
+    <util:panel id="${id}" title="${title_msg}" openPane="${openPane}">
+      <spring:url value="${path}" var="form_url"/>
+      <c:set var="jsCall" value=""/>
+
+	<h2>
+		Etape 2/3 : indiquer les contributeurs à cette version
+	</h2>
+	
+	<h3>
+		Contribution à une nouvelle version de la musique "${titreMusique}" :
+	</h3>
+      
+      - S'il n'y a qu'un contributeur, choisir le type de contribution (composition, arrangement, interprétation...) ainsi que le contributeur (à choisir parmi les membres du label uniquement).<br/>
+      - S'il y a plusieurs contributeurs, cliquez sur "Ajouter un autre contributeur à cette version..." après avoir saisi les informations de premier contributeur.<br/><br/>
+	
+		<form:form action="${form_url}" method="POST" modelAttribute="nouvellecontribution">
+
+			<field:select field="typeContribution" id="c_com_ben_monlabel_domain_Contribution_typeContribution" items="${typecontributions}" path="typecontributions" required="true" z="92MiKpYOMWIgP/rZ9twxrI6XfVM="/>
+    		
+        	<table>
+				<tr>
+					<td>Membre du label à qui attribuer cette contribution :</td>
+					<td>
+						<select name="membre" >
+						<c:forEach items="${membresDuLabel}" var="membre" varStatus="status">
+						<option value="${membre.nomDArtiste}">${membre.nomDArtiste} (email : ${membre.adresseMail})</option>
+						</c:forEach>
+						</select>
+					</td>
+				</tr>
+			</table>
+			
+        <input type="submit" name="contributionsBouton" value="Ajouter un autre contributeur à cette version..."/><br/>
+        <input type="submit" name="contributionsBouton" value="Revenir à l'étape précédente"/>
+        <input type="submit" name="contributionsBouton" value="J'ai fini d'ajouter les contributions"/>
+      </form:form>
+      
+      <h3>
+      	Liste des contributeurs :
+      </h3>
+      
+      
+       <table>
+      	<tr>
+  			<thead>
+  				<th>Contributeur</th>
+  				<th>Contribution</th>
+  			</thead>
+ 		</tr>
+ 		<c:forEach var="contribution" items="${musiqueversion.contributions}">
+ 			<tr>
+ 				<td>
+ 					${contribution.membre.nomDArtiste}
+ 				</td>
+ 				<td>
+ 					${contribution.typeContribution}
+ 				</td>
+ 			</tr>
+ 		</c:forEach>
+	</table>
+	
+    </util:panel>
+  </c:if>
+  
+</div>

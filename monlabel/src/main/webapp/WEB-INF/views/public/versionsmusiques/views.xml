@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="public/versionsmusiques/index">
+        <put-attribute name="body" value="/WEB-INF/views/public/versionsmusiques/index.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="public/versionsmusiques/contributions">
+        <put-attribute name="body" value="/WEB-INF/views/public/versionsmusiques/contributions.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="public/versionsmusiques/copyright">
+        <put-attribute name="body" value="/WEB-INF/views/public/versionsmusiques/copyright.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="public/versionsmusiques/validationversion">
+        <put-attribute name="body" value="/WEB-INF/views/public/versionsmusiques/validerversion.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="public/versionsmusiques/commentairesversion">
+        <put-attribute name="body" value="/WEB-INF/views/public/versionsmusiques/commentairesversion.jspx"/>
+    </definition>
+    
+</tiles-definitions>

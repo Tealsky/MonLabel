@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_ben_monlabel_domain_MusiqueVersion" object="${musiqueversion}" path="/musiqueversions" z="GLjt2WIVTIK+p3ji4MXl1qtqNaY=">
+        <field:display date="true" dateTimePattern="${musiqueVersion_dateedition_date_format}" field="dateEdition" id="s_com_ben_monlabel_domain_MusiqueVersion_dateEdition" object="${musiqueversion}" z="OkTmHA1HjZ+2DN2n2Usu86+/9eE="/>
+        <field:display field="description" id="s_com_ben_monlabel_domain_MusiqueVersion_description" object="${musiqueversion}" z="4jXTRFrZ5LqSs9zVkDMWySh7M5I="/>
+        <field:display field="diffusion" id="s_com_ben_monlabel_domain_MusiqueVersion_diffusion" object="${musiqueversion}" z="Ed1j658gWkhcgz35GZAO+2uHOr8="/>
+        <field:display field="musiqueEnCours" id="s_com_ben_monlabel_domain_MusiqueVersion_musiqueEnCours" object="${musiqueversion}" z="KFBltdnOSZ+t3QrAnJ+uzqMaETk="/>
+        <field:display field="musiqueActuelle" id="s_com_ben_monlabel_domain_MusiqueVersion_musiqueActuelle" object="${musiqueversion}" z="BzyHV1v9rJ9vJMR/gtp/PqYkxbk="/>
+        <field:display field="projetCubase" id="s_com_ben_monlabel_domain_MusiqueVersion_projetCubase" object="${musiqueversion}" z="Qcm6BmXoTF74tkMhEOIsAQML4GM="/>
+        <field:display field="fichierAudio" id="s_com_ben_monlabel_domain_MusiqueVersion_fichierAudio" object="${musiqueversion}" z="nT7ZdjoJq8PA66b8YG7STJ/0CIg="/>
+    </page:show>
+</div>

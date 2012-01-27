@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" 
+	xmlns:form="http://www.springframework.org/tags/form" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" 
+	version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <jsp:output omit-xml-declaration="yes"/>
+  
+  <util:panel id="title" title="${titre}">
+    <spring:message code="application_name" htmlEscape="false" var="app_name"/>
+
+	<h2>
+		Comment collaborer à cette musique ?
+	</h2>
+	
+	- Ecoutez la musique dans sa version actuelle.<br/>
+	- Ecoutez les différentes propositions de nouvelles versions faites par d'autres membres.<br/>
+	- Prendre connaissance des objectifs pour la prochaine version.<br/>
+	- Récupérer le projet Cubase de cette musique.<br/>
+	- Déposer votre version de cette musique.<br/>
+	
+    <h3>
+      Etat actuel de la musique : ${musique.etat}
+    </h3>
+    
+    Description de la musique dans son état actuelle : ${musique.versionActuelle.description}
+
+    <table>
+ 		<tr>
+  			<thead>
+  				<th>Titre provisoire</th>
+  				<th>Titre</th>
+  				<th>Ecoute</th>
+  				<th>Récupérer le projet Cubase</th> 
+  			</thead>
+ 		</tr>
+ 		<tr>
+ 			
+			<td>${musique.titreProvisoire}</td>
+			<td>${musique.titre}</td>
+			<td>
+				<object type="application/x-shockwave-flash" data="${contextPath}/dewplayer.swf" width="200" height="20" id="dewplayer" name="dewplayer"> 
+					  <param name="wmode" value="transparent" />
+					  <param name="movie" value="${contextPath}/dewplayer.swf" /> 
+					  <param name="flashvars" value="mp3=${contextPath}/musics/${musique.id}/${musique.versionActuelle.fichierAudio.id}/${musique.versionActuelle.fichierAudio.titreMusique}.mp3" /> 
+				</object>
+			</td>
+			<c:if test="${recupererVersionActuelle}">
+	        <td class="utilbox">
+	        	<spring:url value="${pathRecupererVersionActuelle}/${musique.versionActuelle.id}" var="recuperer_version_actuelle_form_url">
+	                <spring:param name="form" />
+	            </spring:url>
+	            <spring:url value="/resources/images/update.png" var="update_image_url" />
+	            <spring:message arguments="Récupérer la version actuelle" code="entity_update" var="update_label" htmlEscape="false" />
+	            <a href="${recuperer_version_actuelle_form_url}" alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}">
+	                <img alt="${fn:escapeXml(update_label)}" class="image" src="${update_image_url}" title="${fn:escapeXml(update_label)}" />
+	            </a>
+	          </td>
+	        </c:if>
+          
+ 		</tr>
+ 		
+	</table>
+    
+    <h3>
+      Objectif à atteindre pour la prochaine version :
+    </h3>
+
+	${musique.objectifProchaineVersion}
+
+    <table>
+ 		<tr>
+  			<thead>
+  				<th>Date limite de soumission</th>
+  				<th>Déposer votre version</th> 
+  			</thead>
+ 		</tr>
+ 		<tr>
+ 			
+			<td>Aucune</td>
+			
+			<c:if test="${soumettreVersion}">
+	        <td class="utilbox">
+	        	<spring:url value="${pathSoumettreVersion}" var="soumettre_version_form_url">
+	            </spring:url>
+	            <spring:url value="/resources/images/update.png" var="update_image_url" />
+	            <spring:message arguments="Soumettre une nouvelle version" code="entity_update" var="update_label" htmlEscape="false" />
+	            <a href="${soumettre_version_form_url}" alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}">
+	                <img alt="${fn:escapeXml(update_label)}" class="image" src="${update_image_url}" title="${fn:escapeXml(update_label)}" />
+	            </a>
+	          </td>
+	        </c:if>
+          
+ 		</tr>
+ 		
+	</table>
+	
+    <h3>
+      Liste des versions (parmi toutes ces versions une seule sera finalement retenue) :
+    </h3>
+
+    <table>
+ 		<tr>
+  			<thead>
+  				<th>Titre</th>
+  				<th>Ecoute</th>
+  				<th>Description</th>
+  				<th>Commentaires</th>
+  				<th>Retenir cette version</th> 
+  			</thead>
+ 		</tr>
+ 		<c:forEach var="versionMusique" items="${versions}"> 
+ 			<tr>
+ 			
+		   		<td>${versionMusique.fichierAudio.titreMusique}</td>
+		   		<td>
+					<object type="application/x-shockwave-flash" data="${contextPath}/dewplayer.swf" width="200" height="20" id="dewplayer" name="dewplayer"> 
+						  <param name="wmode" value="transparent" />
+						  <param name="movie" value="${contextPath}/dewplayer.swf" /> 
+						  <param name="flashvars" value="mp3=${contextPath}/musics/${musique.id}/${versionMusique.fichierAudio.id}/${versionMusique.fichierAudio.titreMusique}.mp3" /> 
+					</object>
+				</td>
+		   		<td>${versionMusique.description}</td>
+			
+				<c:if test="${plusDInfos}">
+	            <td class="utilbox">
+	              <spring:url value="${pathPlusDInfos}/${versionMusique.id}" var="plus_d_infos_form_url">
+	              </spring:url>
+	              <spring:url value="/resources/images/update.png" var="update_image_url" />
+	              <spring:message arguments="Voir les commentaires sur cette version" code="entity_update" var="commentaires_label" htmlEscape="false" />
+	              <a href="${plus_d_infos_form_url}" alt="${fn:escapeXml(commentaires_label)}" title="${fn:escapeXml(commentaires_label)}">
+	                <img alt="${fn:escapeXml(commentaires_label)}" class="image" src="${update_image_url}" title="${fn:escapeXml(commentaires_label)}" />
+	              </a>
+	            </td>
+	          	</c:if>
+	          	
+				<c:if test="${validerVersion}">
+	            <td class="utilbox">
+	              <spring:url value="${pathValiderVersion}/${musique.id}/${versionMusique.id}" var="valider_version_form_url">
+	              </spring:url>
+	              <spring:url value="/resources/images/update.png" var="update_image_url" />
+	              <spring:message arguments="Retenir cette version parmi toutes les autres" code="entity_update" var="validation_label" htmlEscape="false" />
+	              <a href="${valider_version_form_url}" alt="${fn:escapeXml(validation_label)}" title="${fn:escapeXml(validation_label)}">
+	                <img alt="${fn:escapeXml(validation_label)}" class="image" src="${update_image_url}" title="${fn:escapeXml(validation_label)}" />
+	              </a>
+	            </td>
+	          	</c:if>
+	        
+ 			</tr>
+ 		</c:forEach>
+	</table>
+
+  </util:panel>
+</div>

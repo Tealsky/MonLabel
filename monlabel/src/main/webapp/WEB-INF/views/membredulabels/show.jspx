@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_ben_monlabel_domain_MembreDuLabel" object="${membredulabel}" path="/membredulabels" z="K+Xb3ZvM0e6qOjiOFSn8sSLo/us=">
+        <field:display field="adresseMail" id="s_com_ben_monlabel_domain_MembreDuLabel_adresseMail" object="${membredulabel}" z="qFNywmwRN3uEO42npkK6uHhU9MA="/>
+        <field:display field="nomDArtiste" id="s_com_ben_monlabel_domain_MembreDuLabel_nomDArtiste" object="${membredulabel}" z="khKEwjnt/3tGrRGKOpyDg2g4re4="/>
+    </page:show>
+</div>

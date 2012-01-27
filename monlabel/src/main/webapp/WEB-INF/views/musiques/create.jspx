@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_ben_monlabel_domain_Musique" modelAttribute="musique" path="/musiques" render="${empty dependencies}" z="YoF9yvGVafgzQK/BwzZzpc2EyIg=">
+        <field:input field="titre" id="c_com_ben_monlabel_domain_Musique_titre" required="true" z="kGMEeRE20C1HsjT08mlPwX7WZ1E="/>
+        <field:input field="titreProvisoire" id="c_com_ben_monlabel_domain_Musique_titreProvisoire" z="nRm8ZRvQPJLQWWV9sHE+wSTUB1E="/>
+        <field:select field="etat" id="c_com_ben_monlabel_domain_Musique_etat" items="${etats}" path="etats" z="gD8YmuFDpFrYFMoIbK85a4hVzi8="/>
+        <field:select field="finie" id="c_com_ben_monlabel_domain_Musique_finie" items="${finitudes}" path="finitudes" z="OOaNmMETQ7i2W4kOhSpkMr2ZoyY="/>
+        <field:simple field="propositionsFuturesVersions" id="c_com_ben_monlabel_domain_Musique_propositionsFuturesVersions" messageCode="entity_reference_not_managed" messageCodeAttribute="Musique Version" z="kY/qqSGdiNznUMu/AlT+DMEY8/M="/>
+        <field:select field="versionActuelle" id="c_com_ben_monlabel_domain_Musique_versionActuelle" itemValue="id" items="${musiqueversions}" path="/musiqueversions" z="pZHyB+5cyG2c4gLaffN7VIJzVww="/>
+        <field:textarea field="objectifProchaineVersion" id="c_com_ben_monlabel_domain_Musique_objectifProchaineVersion" z="hPZHdkG+SwMYup1s0Usw79a95GQ="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_ben_monlabel_domain_Musique" render="${not empty dependencies}" z="oPHblT53DbviYFT5OGZ4ekLt5dc="/>
+</div>

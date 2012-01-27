@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" 
+	xmlns:form="http://www.springframework.org/tags/form" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" 
+	version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <jsp:output omit-xml-declaration="yes"/>
+  <spring:message code="label_public_listemusiques_index" htmlEscape="false" var="title"/>
+  <util:panel id="title" title="${title}">
+    <spring:message code="application_name" htmlEscape="false" var="app_name"/>
+    <h3>
+      Collaborer à la création d'une musique
+    </h3>
+   
+    Pour participer à la création d'une musique :<br/>
+    - Choisissez une musique en l'écoutant.<br/>
+    - Cliquez sur "Participer" pour collaborer à la création de la musique choisie.<br/><br/> 
+    
+    <table>
+ 		<tr>
+  			<thead>
+				<th>Titre provisoire</th>
+				<th>Titre définitif</th>
+				<th>Ecoute</th>
+				<th>Finitude</th>
+				<th>Etat actuelle de la musique</th>
+				<th>Parciper...</th>
+  			</thead>
+ 		</tr>
+ 		<c:forEach var="musique" items="${musiques}"> 
+ 			<tr>
+ 			
+		   		<td>${musique.titreProvisoire}</td>
+		   		<td>${musique.titre}</td>
+		   		<td>
+		   			<object type="application/x-shockwave-flash" data="${contextPath}/dewplayer.swf" width="200" height="20" id="dewplayer" name="dewplayer"> 
+					  <param name="wmode" value="transparent" />
+					  <param name="movie" value="${contextPath}/dewplayer.swf" /> 
+					  <param name="flashvars" value="mp3=${contextPath}/musics/${musique.id}/${musique.versionActuelle.fichierAudio.id}/${musique.versionActuelle.fichierAudio.titreMusique}.mp3" />
+					</object>
+		   		</td>
+		   		<td>${musique.finie}</td>
+		   		<td>${musique.etat}</td>
+			
+				<c:if test="${update}">
+	            <td class="utilbox">
+	              <spring:url value="${path}/${musique.id}" var="update_form_url">
+	              </spring:url>
+	              <spring:url value="/resources/images/update.png" var="update_image_url" />
+	              
+	              <a href="${update_form_url}" alt="${update_form_url}" title="${update_form_url}">
+	                <img alt="${update_form_url}" class="image" src="${update_image_url}" title="${update_form_url}" />
+	              </a>
+	            </td>
+	          	</c:if>
+          
+ 			</tr>
+ 		</c:forEach>
+	</table>
+
+  </util:panel>
+</div>

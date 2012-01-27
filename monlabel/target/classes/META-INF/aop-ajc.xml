@@ -1,0 +1,52 @@
+<aspectj>
+<aspects>
+<aspect name="com.ben.monlabel.domain.Contribution_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.Commentaire_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.domain.Invite_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.Commentaire_Roo_JavaBean"/>
+<aspect name="com.ben.monlabel.domain.MembreDuLabel_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.MusiqueVersion_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.Contribution_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.domain.Musique_Roo_JavaBean"/>
+<aspect name="com.ben.monlabel.domain.FichierAudio_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.domain.FichierAudio_Roo_JavaBean"/>
+<aspect name="com.ben.monlabel.domain.Commentaire_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.web.ProjetCubaseController_Roo_Controller"/>
+<aspect name="com.ben.monlabel.domain.Invite_Roo_JavaBean"/>
+<aspect name="com.ben.monlabel.domain.Contribution_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.Invite_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.Commentaire_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.Contribution_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.web.MusiqueController_Roo_Controller"/>
+<aspect name="com.ben.monlabel.domain.Musique_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.domain.MembreDuLabel_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.domain.FichierAudio_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.Commentaire_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.ProjetCubase_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.domain.Contribution_Roo_JavaBean"/>
+<aspect name="com.ben.monlabel.web.ContributionController_Roo_Controller"/>
+<aspect name="com.ben.monlabel.domain.Musique_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.FichierAudio_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.MusiqueVersion_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.domain.MusiqueVersion_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.ben.monlabel.domain.Musique_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.domain.MembreDuLabel_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.MusiqueVersion_Roo_JavaBean"/>
+<aspect name="com.ben.monlabel.domain.ProjetCubase_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.domain.ProjetCubase_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.Musique_Roo_ToString"/>
+<aspect name="com.ben.monlabel.domain.Invite_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.domain.MembreDuLabel_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.domain.Invite_Roo_Jpa_Entity"/>
+<aspect name="com.ben.monlabel.web.InviteController_Roo_Controller"/>
+<aspect name="com.ben.monlabel.domain.FichierAudio_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ben.monlabel.web.MusiqueVersionController_Roo_Controller"/>
+<aspect name="com.ben.monlabel.domain.ProjetCubase_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.MusiqueVersion_Roo_Configurable"/>
+<aspect name="com.ben.monlabel.domain.MembreDuLabel_Roo_JavaBean"/>
+<aspect name="com.ben.monlabel.web.FichierAudioController_Roo_Controller"/>
+<aspect name="com.ben.monlabel.web.MembreDuLabelController_Roo_Controller"/>
+</aspects>
+</aspectj>
+

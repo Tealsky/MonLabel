@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_ben_monlabel_domain_Musique" object="${musique}" path="/musiques" z="khyblB+vRBAxZSh/XDLeENQUr9I=">
+        <field:display field="titre" id="s_com_ben_monlabel_domain_Musique_titre" object="${musique}" z="M4LFU+LiJyeqVt5Sd0G9mpkQwW0="/>
+        <field:display field="titreProvisoire" id="s_com_ben_monlabel_domain_Musique_titreProvisoire" object="${musique}" z="i9K7MIyhMD8i6RDwTel0I/UyGFQ="/>
+        <field:display field="etat" id="s_com_ben_monlabel_domain_Musique_etat" object="${musique}" z="RsDhBjTrfRi4BCZAKFH8ossEE80="/>
+        <field:display field="finie" id="s_com_ben_monlabel_domain_Musique_finie" object="${musique}" z="ak+OBJGlbSSnmuYVlmcWCTgCpPc="/>
+        <field:display field="versionActuelle" id="s_com_ben_monlabel_domain_Musique_versionActuelle" object="${musique}" z="/JMNSUQ0wyNuo16CJDoHspK6NhE="/>
+        <field:display field="objectifProchaineVersion" id="s_com_ben_monlabel_domain_Musique_objectifProchaineVersion" object="${musique}" z="Xz3RQOqSBnacBCH62HhtOBPKWJY="/>
+    </page:show>
+</div>

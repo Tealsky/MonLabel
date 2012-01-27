@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_ben_monlabel_domain_Invite" modelAttribute="invite" path="/invites" versionField="Version" z="TXCwPQoGlvyp3G82X2OpBtGbmdo=">
+        <field:input field="adresseMail" id="c_com_ben_monlabel_domain_Invite_adresseMail" validationRegex="\\b[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}\\b" z="dOw8ES4j4gGSEiZjUtrg9aLou7U="/>
+    </form:update>
+</div>

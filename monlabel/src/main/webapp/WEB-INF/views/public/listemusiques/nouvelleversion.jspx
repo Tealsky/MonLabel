@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" 
+	xmlns:form="http://www.springframework.org/tags/form" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"  
+	version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <jsp:output omit-xml-declaration="yes"/>
+  
+  <c:if test="${empty render or render}">
+   
+    <c:set var="enctype" value="application/x-www-form-urlencoded"/>
+    <c:if test="${multipart}">
+      <c:set var="enctype" value="multipart/form-data"/>
+    </c:if>
+    
+    <util:panel id="${id}" title="${title_msg}" openPane="${openPane}">
+      <spring:url value="${path}" var="form_url"/>
+      <c:set var="jsCall" value=""/>
+      <c:if test="${not empty compositePkField}">
+      	<c:set var="jsCall" value="encodePk()" />
+      </c:if>
+     
+      <h2>
+      	Etape 1/3 : description de la version
+      </h2>
+     
+      <h3>
+      	Soumission d'une nouvelle version de la musique "${titreMusique}" :
+      </h3>
+      
+      - Saisir la date à laquelle vous avez créé cette version.<br/>
+      - Saisir une description textuelle de votre version (ce qu'elle apporte, les problèmes qui restent à résoudre...).<br/>
+      - Indiquer si votre version est accessible aux membres du label (choix à privilégier si vous avez un doute) ou à tous le monde.<br/>
+      - Déposer une version MP3 de votre version (vous déposerez le projet Cubase de votre version plus tard... si c'est votre version qui est retenue).<br/><br/>
+       
+      <form:form action="${form_url}" method="POST" modelAttribute="nouvelleVersion" enctype="${enctype}">
+        
+        <field:datetime dateTimePattern="${musiqueVersion_dateedition_date_format}" field="dateEdition" id="c_com_ben_monlabel_domain_MusiqueVersion_dateEdition" required="true" z="OKCDc/IjABPwis3c96UO915r9ck=" disabled="${disabledDate}" validationMessage="errare" validationMessageCode="errare" label="Date édition"/>
+        <field:textarea field="description" id="c_com_ben_monlabel_domain_MusiqueVersion_description" z="Wj+BVzR6vvyv2p3IU2ch5TUqyow=" label="description (en quelques ligne de cette version)"/>
+        <field:select field="diffusion" id="c_com_ben_monlabel_domain_MusiqueVersion_diffusion" items="${diffusions}" path="diffusions" z="3a8sGTJkZDLoGDaDlTYDJRwviNk=" label="diffusion"/>
+        
+    	Fichier MP3 :
+    	<input type="file" name="file"/><br/>
+    	
+        <input type="submit" value="Déposer cette version"/>
+      </form:form>
+    	
+    </util:panel>
+  </c:if>
+  
+</div>

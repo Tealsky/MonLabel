@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_ben_monlabel_domain_Contribution" modelAttribute="contribution" path="/contributions" versionField="Version" z="WC4cbPdlfBnxo3M1rLLDPE+Z8P0=">
+        <field:select field="typeContribution" id="c_com_ben_monlabel_domain_Contribution_typeContribution" items="${typecontributions}" path="typecontributions" required="true" z="OSsZYrsmR2Efl23OORiRZXeUTKU="/>
+        <field:input field="pourcentageDroit" id="c_com_ben_monlabel_domain_Contribution_pourcentageDroit" max="100" min="0" required="true" z="P8heBEmUMZoCrKz1V5CJpsuPBmY="/>
+        <field:input field="instrument" id="c_com_ben_monlabel_domain_Contribution_instrument" z="/UKF/gW8oXNsEguMJ5fDKIdF7iU="/>
+        <field:select field="musique" id="c_com_ben_monlabel_domain_Contribution_musique" itemValue="id" items="${musiqueversions}" path="/musiqueversions" z="1xw/eFxgZO87ngEtFcPAZ5Emig8="/>
+        <field:select field="membre" id="c_com_ben_monlabel_domain_Contribution_membre" itemValue="id" items="${membredulabels}" path="/membredulabels" z="/5dY8rM88+WQna2GPQo3grr88zs="/>
+    </form:update>
+</div>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_ben_monlabel_domain_FichierAudio" object="${fichieraudio}" path="/fichieraudios" z="6qADkvpTz+MWfy4w2L1r5I82uLk=">
+        <field:display field="fichierMP3" id="s_com_ben_monlabel_domain_FichierAudio_fichierMP3" object="${fichieraudio}" z="4I+kriQNu8Pw3PMw9T4UGpWVRvE="/>
+        <field:display field="typeAudio" id="s_com_ben_monlabel_domain_FichierAudio_typeAudio" object="${fichieraudio}" z="vejXv2MmTuQHuHBdWtm9Pv570HQ="/>
+        <field:display field="duree" id="s_com_ben_monlabel_domain_FichierAudio_duree" object="${fichieraudio}" z="BiRd6jgdsFLyFqdUiIUaGuUu8yc="/>
+        <field:display date="true" dateTimePattern="${fichierAudio_datecreation_date_format}" field="dateCreation" id="s_com_ben_monlabel_domain_FichierAudio_dateCreation" object="${fichieraudio}" z="6XYJGHxHtZvgHvsVbniBKrt5lvc="/>
+        <field:display field="copyright" id="s_com_ben_monlabel_domain_FichierAudio_copyright" object="${fichieraudio}" z="tH6QI91muRmNQBL+3LK5/UF3/CI="/>
+        <field:display field="titreMusique" id="s_com_ben_monlabel_domain_FichierAudio_titreMusique" object="${fichieraudio}" z="UCIT13RMELDyWkf8fxm14jUVZfQ="/>
+    </page:show>
+</div>

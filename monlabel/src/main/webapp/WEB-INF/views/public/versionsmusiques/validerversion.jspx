@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" 
+	xmlns:form="http://www.springframework.org/tags/form" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" 
+	version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <jsp:output omit-xml-declaration="yes"/>
+  <spring:message code="label_public_listemusiques_index" htmlEscape="false" var="title"/>
+  <util:panel id="title" title="${title}">
+    <spring:message code="application_name" htmlEscape="false" var="app_name"/>
+    <h3>
+      Confirmation du remplacement de la version actuelle par la nouvelle version ?
+    </h3>
+   
+    <form:form action="${path}" method="POST" modelAttribute="musique">
+    
+    	Voulez-vous vraiment remplacer la version actuelle :
+	    <table>
+	 		<tr>
+	  			<thead>
+					<th>Titre</th>
+					<th>Ecoute</th>
+	  			</thead>
+	 		</tr>
+	 		<tr>
+				<td>${musique.titreProvisoire}</td>
+				<td>
+					<object type="application/x-shockwave-flash" data="${contextPath}/dewplayer.swf" width="200" height="20" id="dewplayer" name="dewplayer"> 
+					  <param name="wmode" value="transparent" />
+					  <param name="movie" value="${contextPath}/dewplayer.swf" /> 
+					  <param name="flashvars" value="mp3=${contextPath}/musics/${musique.id}/${musique.versionActuelle.fichierAudio.id}/${musique.versionActuelle.fichierAudio.titreMusique}.mp3" />
+					</object>
+			   	</td>          
+	 		</tr>
+		</table>
+		
+		Par cette nouvelle version :
+	    <table>
+	 		<tr>
+	  			<thead>
+					<th>Titre</th>
+					<th>Ecoute</th>
+	  			</thead>
+	 		</tr>
+	 		<tr>
+				<td>${nouvelleVersion.musiqueEnCours.titreProvisoire}</td>
+				<td>
+					<object type="application/x-shockwave-flash" data="${contextPath}/dewplayer.swf" width="200" height="20" id="dewplayer" name="dewplayer"> 
+					  <param name="wmode" value="transparent" />
+					  <param name="movie" value="${contextPath}/dewplayer.swf" /> 
+					  <param name="flashvars" value="mp3=${contextPath}/musics/${musique.id}/${nouvelleVersion.fichierAudio.id}/${nouvelleVersion.fichierAudio.titreMusique}.mp3" />
+					</object>
+			   	</td>          
+	 		</tr>
+		</table>
+    	
+    	<input type="submit" value="Remplacer"/>
+    	<input type="submit" value="Ne pas remplacer"/>
+    </form:form>
+    
+  </util:panel>
+</div>

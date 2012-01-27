@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_ben_monlabel_domain_Musique" items="${musiques}" z="gzp/JQD1D03b5nKN67tssu9BN0s=">
+        <table:table data="${musiques}" id="l_com_ben_monlabel_domain_Musique" path="/musiques" z="fSR7Fo+/lOVk5hq04cxbJGdTkqY=">
+            <table:column id="c_com_ben_monlabel_domain_Musique_titre" property="titre" z="0naDk36MuspPzDAfB33CVq/NSXM="/>
+            <table:column id="c_com_ben_monlabel_domain_Musique_titreProvisoire" property="titreProvisoire" z="ZLImyj3gM/HMFULCZoVv1pVqX9s="/>
+            <table:column id="c_com_ben_monlabel_domain_Musique_etat" property="etat" z="pzwGrNrh7W0yJyLfpK+jvEe+lGY="/>
+            <table:column id="c_com_ben_monlabel_domain_Musique_finie" property="finie" z="ZVjFjpvr4C//3RapKbUgvUWmUQI="/>
+            <table:column id="c_com_ben_monlabel_domain_Musique_versionActuelle" property="versionActuelle" z="htGZWGk2hrjNshG+RLV3xEyYumA="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_ben_monlabel_domain_Contribution" items="${contributions}" z="j2XiCGTPJgITIQlrDcCN1fWSJcU=">
+        <table:table data="${contributions}" id="l_com_ben_monlabel_domain_Contribution" path="/contributions" z="i8UyITaIl3dujE+jzjeDmdUE5Pg=">
+            <table:column id="c_com_ben_monlabel_domain_Contribution_typeContribution" property="typeContribution" z="HOWsd1EAhG0LqlqgA7jNpW8ydn4="/>
+            <table:column id="c_com_ben_monlabel_domain_Contribution_pourcentageDroit" property="pourcentageDroit" z="SQRI9gr3vJZhYxudXY2UxyykUPA="/>
+            <table:column id="c_com_ben_monlabel_domain_Contribution_instrument" property="instrument" z="SFHMwG9IoXjMEIAXbBpRKu3nBEY="/>
+            <table:column id="c_com_ben_monlabel_domain_Contribution_musique" property="musique" z="MbUNRSq5mYhSSVUb0XnMDMuqsYs="/>
+            <table:column id="c_com_ben_monlabel_domain_Contribution_membre" property="membre" z="/zkxo615NkJQy5tfbtB6TkcDLD4="/>
+        </table:table>
+    </page:list>
+</div>

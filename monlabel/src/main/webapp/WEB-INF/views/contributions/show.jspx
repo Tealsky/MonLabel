@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_ben_monlabel_domain_Contribution" object="${contribution}" path="/contributions" z="EAVCK8jxGbUvdbPCd1IaCkalMbo=">
+        <field:display field="typeContribution" id="s_com_ben_monlabel_domain_Contribution_typeContribution" object="${contribution}" z="OG5Nbcti0DZBKTfOhBrtheqs7hQ="/>
+        <field:display field="pourcentageDroit" id="s_com_ben_monlabel_domain_Contribution_pourcentageDroit" object="${contribution}" z="ZrvcFPOBVhn5dUvdQhQC0dv2eJQ="/>
+        <field:display field="instrument" id="s_com_ben_monlabel_domain_Contribution_instrument" object="${contribution}" z="TZMpBzWwQHynbFrI368LeoitNJI="/>
+        <field:display field="musique" id="s_com_ben_monlabel_domain_Contribution_musique" object="${contribution}" z="d5YYx6lNrGer1gBkWnBVwyuzGr4="/>
+        <field:display field="membre" id="s_com_ben_monlabel_domain_Contribution_membre" object="${contribution}" z="NnNpXUZVEWQtqdlY3G9Dj1woZKY="/>
+    </page:show>
+</div>

@@ -1,0 +1,118 @@
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2011-12-20 13:08:56
+project --topLevelPackage com.ben.monLabel
+jpa setup --database HYPERSONIC_IN_MEMORY --provider HIBERNATE
+entity jpa --class ~.domain.Musique
+field string --fieldName titre --notNull --unique
+field string --fieldName titreProvisoire --class ~.domain.Musique
+enum type --class ~.domain.Etat
+enum constant --name COMPOSEE
+enum constant --name ARRANGEE
+enum constant --name REALISEE
+enum constant --name MIXEE
+enum constant --name MASTERISEE
+field enum --fieldName etat --type ~.domain.Etat --class ~.domain.Musique
+enum type --class ~.domain.Finitude
+enum constant --name TERMINEE
+enum constant --name EN_COURS
+field enum --fieldName finie --type ~.domain.Finitude --class ~.domain.Musique
+entity jpa --class ~.domain.MusiqueVersion 
+field date --type java.util.Date --fieldName dateEdition --dateTimeFormatPattern dd-MM-yyyy --notNull 
+field string --fieldName description --sizeMax 256
+enum type --class ~.domain.Diffusion
+enum constant --name PUBLIQUE
+enum constant --name AU_MEMBRE_DU_LABEL
+field enum --type ~.domain.Diffusion --fieldName diffusion --class ~.domain.MusiqueVersion
+field set --fieldName propositionsFuturesVersions --type ~.domain.MusiqueVersion --class ~.domain.Musique --cardinality ONE_TO_MANY --mappedBy musiqueEnCours
+field reference --fieldName musiqueEnCours --type ~.domain.Musique --class ~.domain.MusiqueVersion --cardinality MANY_TO_ONE 
+field reference --fieldName versionActuelle --type ~.domain.MusiqueVersion --class ~.domain.Musique --cardinality ONE_TO_ONE
+field reference --fieldName musiqueActuelle --type ~.domain.Musique --class ~.domain.MusiqueVersion --cardinality ONE_TO_ONE 
+entity jpa --class ~.domain.Contribution
+enum type --class ~.domain.TypeContribution 
+enum constant --name COMPOSITION 
+enum constant --name ARRANGEMENT_ORCHESTRATION
+enum constant --name REALISATION
+enum constant --name INTERPRETATION
+enum constant --name MIXAGE
+enum constant --name MASTERISATION
+field enum --class ~.domain.Contribution --type ~.domain.TypeContribution --fieldName typeContribution --notNull 
+field number --type float --fieldName pourcentageDroit --min 0 --max 100 --notNull --value 0
+field string --fieldName instrument 
+field set --fieldName contributions --type ~.domain.Contribution --class ~.domain.MusiqueVersion --mappedBy musique --cardinality ONE_TO_MANY 
+field reference --fieldName musique --type ~.domain.MusiqueVersion --class ~.domain.Contribution --cardinality MANY_TO_ONE
+entity jpa --class ~.domain.Invite
+field string --fieldName adresseMail --regexp \b[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\b
+entity jpa --class ~.domain.MembreDuLabel --extends ~.domain.Invite
+field set --fieldName contributions --type ~.domain.Contribution --class ~.domain.MembreDuLabel --cardinality ONE_TO_MANY --mappedBy membre
+field reference --fieldName membre --type ~.domain.MembreDuLabel --class ~.domain.Contribution --cardinality MANY_TO_ONE 
+field string --fieldName nomDArtiste --class ~.domain.MembreDuLabel --notNull --unique
+entity jpa --class ~.domain.ProjetCubase
+field reference --fieldName projetCubase --type ~.domain.ProjetCubase --class ~.domain.MusiqueVersion --cardinality ONE_TO_ONE
+enum type --class ~.domain.TypeAudio
+enum constant --name MP3
+enum constant --name WAV
+entity jpa --class ~.domain.FichierAudio
+field file --contentType MP3 --fieldName fichierMP3 --autoUpload --notnull
+field enum --fieldName typeAudio --type ~.domain.TypeAudio --class ~.domain.FichierAudio
+field number --type float --fieldName duree
+field date --type java.util.Date --fieldName dateCreation --dateTimeFormatPattern dd-MM-yyyy
+field string --fieldName copyright 
+field string --fieldName titreMusique
+field reference --fieldName fichierAudio --type ~.domain.FichierAudio --class ~.domain.MusiqueVersion --cardinality ONE_TO_ONE 
+web mvc setup
+web mvc controller --class ~.web.publique.ListeMusiquesController --preferredMapping /public/listemusiques
+web mvc controller --class ~.web.publique.VersionsController --preferredMapping /public/versionsmusiques
+web mvc all --package ~.web
+email sender setup --hostServer smtp.gmail.com --username benoit.charroux@gmail.com --password Wasters123 --port 587
+perform eclipse
+// script --file ..\log.roo
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2011-12-20 16:57:13
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-03 15:35:42
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-03 16:50:43
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-04 11:06:42
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-04 16:51:44
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-09 11:45:06
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-09 12:19:45
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-09 14:53:08
+field string --class ~.domain.Musique --fieldName objectifProchaineVersion --sizeMax 255
+perform eclipse
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-09 16:54:36
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-16 13:24:33
+backup
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-16 13:27:14
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-18 14:14:05
+backup
+web mvc controller --class ~.web.publique.CreationMusiqueController --preferredMapping /public/creationmusique
+perform eclipse
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-18 15:47:50
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-23 13:09:21
+backup
+entity jpa --class ~.domain.Commentaire
+field string --fieldName texte --sizeMax 255 --notNull 
+field set --fieldName commentaires --class ~.domain.MembreDuLabel --type ~.domain.Commentaire --cardinality ONE_TO_MANY --mappedBy auteur
+field reference --fieldName auteur --class ~.domain.Commentaire --type ~.domain.MembreDuLabel --cardinality MANY_TO_ONE 
+field set --fieldName commentaires --class ~.domain.MusiqueVersion --type ~.domain.Commentaire --cardinality ONE_TO_MANY --mappedBy avis
+field reference --fieldName avis --class ~.domain.Commentaire --type ~.domain.MusiqueVersion --cardinality MANY_TO_ONE 
+perform eclipse
+perform eclipse
+quit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-23 13:39:19
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-23 21:04:47
+exit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-23 22:20:29
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log opened at 2012-01-24 12:27:21
+// [failed] field date --class ~.domain.Commentaire --type java.util.Date --fieldName date --notNull 
+field date --class ~.domain.Commentaire --type java.util.Date --fieldName dateEdition --notNull 
+perform eclipse
+exit
+// Spring Roo 1.2.0.RC1 [rev dcaa483] log closed at 2012-01-24 15:00:22
